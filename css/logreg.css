@@ -1,0 +1,44 @@
+a.logreg{
+    width: 200px;
+    
+    
+  
+    font-size: 25px;
+    margin-top: 10px;
+    padding: 5px 52px;
+    text-decoration: none;
+    background: rgb(236, 231, 231);
+    
+    
+}
+a.logregg{
+    width: 200px;
+    font-size: 25px;
+    text-decoration: none;
+    background: rgb(236, 231, 231);
+    padding: 5px 82px;
+    margin: 170px 0px 0px 0px;
+}
+
+a.logreg:active{
+    background:  rgb(50, 134, 213);
+    color: rgb(17, 16, 16);
+}
+.imgee{
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+}
+a.logreg:hover{
+    background:  rgb(50, 134, 213);
+    color: rgb(17, 16, 16);
+}
+
+a.logreg.l{
+    margin-right: 1px;
+    
+}
+a.logreg.r{
+    margin-left: 1px;
+
+}
