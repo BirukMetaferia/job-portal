@@ -1,0 +1,256 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="cs" />
+    <meta name="robots" content="all,follow" />
+
+    
+    <title>job portal</title>
+    <meta name="description" content="..." />
+    <meta name="keywords" content="..." />
+    
+    <link rel="index" href="./" title="Home" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="css/hole.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" media="print" type="text/css" href="./css/print.css" />
+    <link rel="stylesheet" media="aural" type="text/css" href="./css/aural.css" />
+    <style type="text/css">
+<!--
+.style1 {
+	color: #000066;
+	font-weight: bold;
+}
+.style2 {font-weight: bold}
+-->
+    </style>
+</head>
+
+<body id="www-url-cz">
+<SCRIPT language="JavaScript1.2" src="gen_validation.js"></SCRIPT>
+<SCRIPT language="JavaScript1.2">
+var arrFormValidation=
+             [
+			 		[//Name
+						  ["minlen=1",
+		"Please Enter Name "
+						  ] 
+					
+                     ],
+                   [//Address
+						   ["minlen=1",
+		"Please Enter Address "
+						  ] 
+						  
+                   ],
+                   [//Country
+						 
+						 
+					  
+						  				
+                   ],
+				   [//State
+						  
+						  
+                   ],
+				   [//City
+						  
+						  
+                   ],
+				   [//Mobile
+						  
+						  ["num",
+		"Please Enter valid Mobile "
+						  ],
+						  ["minlen=10",
+		"Please Enter valid Mobile "
+						  ]
+						 
+						 
+						  
+                   ],
+				   [//Email
+						   ["minlen=1",
+		"Please Enter Email "
+						  ], 
+						  ["email",
+		"Please Enter valid email "
+						  ]
+						  
+                   ],
+				   [//ID
+						  
+						  
+                   ],
+				   [//TDType
+						  
+						  ["minlen=1",
+		"Please Select File "
+						  ]
+						  
+                   ],
+				   [//UserName
+						  
+					 ["minlen=1",
+		"Please Enter UserName "
+						  ]	
+                   ],
+				   [//Password
+						  
+						 ["minlen=1",
+		"Please Enter Password "
+						  ] 
+						  
+                   ],
+				   [//Confirm
+						  
+						   ["minlen=1",
+		"Please Enter Confirm Password "
+						  ]
+						  
+                   ]
+            ];
+</SCRIPT>
+<!-- Main -->
+<div id="main" class="box">
+<?php 
+include "Header.php"
+?>
+<?php 
+include "menu.php"
+?>   
+<!-- Page (2 columns) -->
+    <div id="page" class="box">
+    <div id="page-in" class="box">
+
+        <div id="strip" class="box noprint">
+
+            <!-- RSS feeds -->
+            <hr class="noscreen" />
+
+            <!-- Breadcrumbs -->
+            <p id="breadcrumbs">&nbsp;</p>
+          <hr class="noscreen" />
+            
+        </div> <!-- /strip -->
+
+        <!-- Content -->
+        <div id="content">
+
+           
+            <!-- /article -->
+
+            <hr class="noscreen" />
+
+           
+            <!-- /article -->
+
+            <hr class="noscreen" />
+            
+            <!-- Article -->
+           
+            <!-- /article -->
+
+            <hr class="noscreen" />
+
+            <!-- Article -->
+<div class="articless">
+                <h2><span><a href="#">Our Job Seekers</a></span></h2>
+               
+
+                <p>
+    <table width="100%" border="1" cellpadding="1" cellspacing="2" bordercolor="#006699" >
+                <tr>
+      <th height="32" bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Name</strong></div></th>
+      <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>City</strong></div></th>
+      <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Email</strong></div></th>
+             </tr>
+       <?php
+       // Establish Connection with Database
+       $con = mysqli_connect("localhost","root","","sourcecodester_jobportaldb");
+       // Select Database
+       //mysqli_select_db("sourcecodester_jobportaldb", $con);
+       // Specify the query to execute
+       $sql = "select * from jobseeker_reg where Status='Confirm'";
+       // Execute query
+
+
+
+       $result = mysqli_query($con,$sql);
+
+
+       //var_dump($result);
+
+      // Loop through each records
+       while($row = mysqli_fetch_array($result))
+      {
+      $Name=$row['JobSeekerName'];
+      $City=$row['City'];
+      $Email=$row['Email'];
+
+      ?>
+      <tr>
+      <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Name;?></strong></div></td>
+      <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $City;?></strong></div></td>
+      <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Email;?></strong></div></td>
+      </tr>
+      <?php
+      }
+      // Retrieve Number of records returned
+     $records = mysqli_num_rows($result);
+     ?>
+
+     <?php
+      // Close the connection
+      mysqli_close($con);
+      ?>
+      </table>
+       </td>
+       </tr>
+    </table>
+                </p>
+
+                             </div>
+                <p class="btn-more box noprint">&nbsp;</p>
+
+</div> <!-- /article -->
+<div class="subartr"><div class="upper">Those are our jobseeker listed in the table.They can search for various jobs as per them qualification. Here Job Seeker can registered himself on the web portal</div>
+<div class="lower" id="lower">and create his profile along with his educational information. Job Seeker can search various jobs and apply for the Job.</div>
+<button class="more" onclick="toggll()">Read_more</button>
+</div>
+
+            <hr class="noscreen" />
+            
+        </div> <!-- /content -->
+
+<?php
+include "right.php"
+?>
+
+    </div> <!-- /page-in -->
+    </div> <!-- /page -->
+
+ 
+<?php
+include "footer.php"
+?>
+</div> <!-- /main -->
+<script>
+function toggll(){
+            var div=document.getElementById("lower")
+            
+
+
+            if (div.style.display === "none"){
+              div.style.display = "block";
+             
+            }
+            else{
+              div.style.display = "none";
+             
+            }
+
+          }</script>
+</body>
+</html>
